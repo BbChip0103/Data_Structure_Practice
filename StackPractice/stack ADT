@@ -1,0 +1,26 @@
+Stack ADT
+
+int IsEmpty();
+// Return 0 if stack is empty. otherwise it return 1
+
+int GetSize();
+// Return stack size;
+
+void Push(Data data);
+// Stores data on the stack. Stores the value stored in parameter data
+
+Data Pop();
+// Deletes stored data lastly
+// Deleted data will return.
+// In order to call this function, must have at least one piece of data
+
+Data Peek();
+// Return last data, but doesn't delete data
+// In order to call this function, must have at least one piece of data
+
+Stack();
+// initialize stack
+
+~Stack();
+// Delete stack
+// If the stack is not empty, delete all remaining nodes and delete stack
