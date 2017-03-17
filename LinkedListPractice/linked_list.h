@@ -1,8 +1,5 @@
 #pragma once
 
-//testdnasjfabfodaboufdaboudaf
-//fnjdabfoudabfo
-
 template <typename type>
 struct Node {
 	type data;
