@@ -1,0 +1,26 @@
+Queue ADT
+
+int IsEmpty();
+// Return 1 if queue is empty. otherwise it return 0
+
+int GetSize();
+// Return queue size;
+
+void Enqueue(Data data);
+// Stores data on the queue. Stores the value stored in parameter data
+
+Data Dequeue();
+// Deletes stored data lastly
+// Deleted data will return.
+// In order to call this function, must have at least one piece of data
+
+Data Peek();
+// Return last data, but doesn't delete data
+// In order to call this function, must have at least one piece of data
+
+Queue();
+// initialize queue
+
+~Queue();
+// Delete queue
+// If the queue is not empty, delete all remaining nodes and delete queue
