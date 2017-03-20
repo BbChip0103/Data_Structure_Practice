@@ -3,7 +3,7 @@
 template <typename T>
 struct Node {
 	T data;
-	Node * next = NULL;
+	Node * p_next = NULL;
 };
 
 template <class T>
@@ -27,10 +27,12 @@ public:
 	// Deletes the first data
 	// Deleted data will return.
 	// In order to call this function, must have at least one piece of data
+	// If dequeue is empty, return 0
 
 	T Peek();
 	// Return first data, but doesn't delete data
 	// In order to call this function, must have at least one piece of data
+	// If dequeue is empty, return 0
 
 	Queue();
 	// initialize queue

@@ -10,16 +10,18 @@ void Enqueue(Data data);
 // Stores data on the queue. Stores the value stored in parameter data
 
 Data Dequeue();
-// Deletes stored data lastly
+// Deletes stored data in front
 // Deleted data will return.
 // In order to call this function, must have at least one piece of data
+// If queue is empty, return 0
 
 Data Peek();
 // Return last data, but doesn't delete data
 // In order to call this function, must have at least one piece of data
+// If dequeue is empty, return 0
 
 Queue();
-// initialize queue
+// Initialize queue
 
 ~Queue();
 // Delete queue
