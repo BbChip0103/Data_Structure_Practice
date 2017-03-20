@@ -12,7 +12,6 @@ class Dequeue {
 private:
 	int dequeue_size;
 	Node<T> * p_dummy_front, * p_dummy_rear;
-//	Node<T> * p_front, * p_rear;
 
 public:
 	bool IsEmpty();
@@ -89,39 +88,41 @@ void Dequeue<T>::AddRear(const T _data) {
 
 	dequeue_size++;
 }
-/*
+
 template <class T>
 T Dequeue<T>::RemoveFront() {
-	Node<T> * temp_node;
+	Node<T> * p_temp_node;
 	T temp_data;
 
-	if (Dequeue_size == 0) return 0;
+	if (dequeue_size == 0) return 0;
 
-	temp_data = p_front->data;
-	temp_node = p_front;
-	p_front = p_front->p_next;
-	delete temp_node;
-	Dequeue_size--;
+	temp_data = p_dummy_front->p_next->data;
+	p_temp_node = p_dummy_front->p_next;
+	p_dummy_front->p_next = p_temp_node->p_next;
+	p_temp_node->p_next->p_before = p_dummy_front;
+	delete p_temp_node;
+	dequeue_size--;
 
 	return temp_data;
 }
 
 template <class T>
 T Dequeue<T>::RemoveRear() {
-	Node<T> * temp_node;
-	T temp_data;
+		Node<T> * p_temp_node;
+		T temp_data;
 
-	if (Dequeue_size == 0) return 0;
+		if (dequeue_size == 0) return 0;
 
-	temp_data = p_front->data;
-	temp_node = p_front;
-	p_front = p_front->p_next;
-	delete temp_node;
-	Dequeue_size--;
+		temp_data = p_dummy_rear->p_before->data;
+		p_temp_node = p_dummy_rear->p_before;
+		p_dummy_rear->p_before = p_temp_node->p_before;
+		p_temp_node->p_before->p_next = p_dummy_rear;
+		delete p_temp_node;
+		dequeue_size--;
 
-	return temp_data;
+		return temp_data;
 }
-*/
+
 template <class T>
 T Dequeue<T>::PeekFront() {
   if (dequeue_size == 0) return 0;
@@ -138,9 +139,6 @@ template <class T>
 Dequeue<T>::Dequeue() : dequeue_size(0) {
 	p_dummy_front = new Node<T>;
 	p_dummy_rear = new Node<T>;
-
-//	p_front  = p_dummy_front;
-//	p_rear = p_dummy_rear;
 
 	p_dummy_front->p_next = p_dummy_rear;
 	p_dummy_rear->p_before = p_dummy_front;
