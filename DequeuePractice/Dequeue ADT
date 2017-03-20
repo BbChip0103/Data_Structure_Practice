@@ -1,0 +1,42 @@
+Dequeue ADT
+
+bool IsEmpty();
+// Return 'true' if Dequeue is empty. otherwise it return 'false'
+
+int GetSize();
+// Return Dequeue size;
+
+void AddFront(Data data);
+// Stores data in the front on the Dequeue. Stores the value stored in parameter data
+
+void AddRear(Data data);
+// Stores data in the rear on the Dequeue. Stores the value stored in parameter data
+
+Data RemoveFront();
+// Deletes stored data in the front
+// Deleted data will ret1urn.
+// In order to call this function, must have at least one piece of data
+// If dequeue is empty, return 0
+
+Data RemoveRear();
+// Deletes stored data in the rear
+// Deleted data will ret1urn.
+// In order to call this function, must have at least one piece of data
+// If dequeue is empty, return 0
+
+Data PeekFront();
+// Return data in the front, but doesn't delete data
+// In order to call this function, must have at least one piece of data
+// If dequeue is empty, return 0
+
+Data PeekRear();
+// Return data in the Rear, but doesn't delete data
+// In order to call this function, must have at least one piece of data
+// If dequeue is empty, return 0
+
+Dequeue();
+// Initialize Dequeue
+
+~Dequeue();
+// Delete Dequeue
+// If the Dequeue is not empty, delete all remaining nodes and delete Dequeue
