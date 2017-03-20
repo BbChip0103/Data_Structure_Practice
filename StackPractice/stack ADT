@@ -13,10 +13,12 @@ Data Pop();
 // Deletes stored data lastly
 // Deleted data will return.
 // In order to call this function, must have at least one piece of data
+// If stack is empty, return 0
 
 Data Peek();
 // Return last data, but doesn't delete data
 // In order to call this function, must have at least one piece of data
+// If stack is empty, return 0
 
 Stack();
 // initialize stack

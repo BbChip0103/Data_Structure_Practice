@@ -3,7 +3,7 @@
 template <typename T>
 struct Node {
   T data;
-  Node * next = NULL;
+  Node * p_next = NULL;
 };
 
 template <class T>
@@ -27,10 +27,12 @@ public:
   // Deletes stored data lastly
   // Deleted data will return.
   // In order to call this function, must have at least one piece of data
+	// If dequeue is empty, return 0
 
   T Peek();
   // Return last data, but doesn't delete data
   // In order to call this function, must have at least one piece of data
+	// If dequeue is empty, return 0
 
   Stack();
   // Initialize stack
@@ -56,7 +58,7 @@ void Stack<T>::Push(T _data) {
   Node<T> * new_node = new Node<T>;
 
   new_node->data = _data;
-  new_node->next = head;
+  new_node->p_next = head;
   head = new_node;
   stack_size++;
 }
@@ -70,7 +72,7 @@ T Stack<T>::Pop() {
 
   temp_data = head->data;
   temp_node = head;
-  head = head->next;
+  head = head->p_next;
   delete temp_node;
   stack_size--;
 
