@@ -72,6 +72,8 @@ void Dequeue<T>::AddFront(const T _data) {
 	Node<T> * new_node = new Node<T>;
 
 	new_node->data = _data;
+	new_node->p_before = p_dummy_front;
+	new_node->p_next = p_dummy_front->p_next;
 	p_dummy_front->p_next->p_before = new_node;
 	p_dummy_front->p_next = new_node;
 
@@ -83,6 +85,8 @@ void Dequeue<T>::AddRear(const T _data) {
 	Node<T> * new_node = new Node<T>;
 
 	new_node->data = _data;
+	new_node->p_before = p_dummy_rear->p_before;
+	new_node->p_next = p_dummy_rear;
 	p_dummy_rear->p_before->p_next = new_node;
 	p_dummy_rear->p_before = new_node;
 
@@ -146,7 +150,10 @@ Dequeue<T>::Dequeue() : dequeue_size(0) {
 
 template <class T>
 Dequeue<T>::~Dequeue() {
-  while(!IsEmpty()) ;
+  while(!IsEmpty()){
+		RemoveFront();
+		std::cout<<"해제\n";
+	}
 
 	delete p_dummy_front;
 	delete p_dummy_rear;
