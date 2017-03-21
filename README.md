@@ -4,9 +4,9 @@
 LinkedList
 Stack
 Queue
+Dequeue
 
 -Incompete-
-Dequeue
 Tree
 Priority Queue
 Heap
