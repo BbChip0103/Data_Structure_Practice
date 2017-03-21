@@ -1,14 +1,14 @@
 # Data_Structue_Practice
 > ## Complete
 > - LinkedList
-- Stack
-- Queue
-- Dequeue
+> - Stack
+> - Queue
+> - Dequeue
 
 > ## Incompete
 > - Tree
-- Priority Queue
-- Heap
-- Table
-- Hash
-- Graph
+> - Priority Queue
+> - Heap
+> - Table
+> - Hash
+> - Graph
