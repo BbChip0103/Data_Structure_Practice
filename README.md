@@ -1,11 +1,11 @@
 # Data_Structue_Practice
-## Complete
+> ## Complete
 - LinkedList
 - Stack
 - Queue
 - Dequeue
 
-## Incompete
+> ## Incompete
 - Tree
 - Priority Queue
 - Heap
