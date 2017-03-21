@@ -1,0 +1,32 @@
+BinaryTree ADT
+
+// 제네릭 자료구조를 구현하기 위하여 'template <class T>'를 사용한다.
+// Use 'template <class T>' to implement the generic data structure.
+
+Node * MakeNode(void);
+// 이진트리 노드를 생성하고, 그 주소값을 반환한다.
+// Creates a binary tree node and returns its address value.
+
+T GetData(Node * _p_node);
+// 노드에 저장된 데이터를 반환한다.
+// Return stored data in the node.
+
+void SetData(Node * _p_tree, T _data);
+// 노드에 데이터를 저장한다. _data로 전달된 값을 저장한다.
+// Stores the data passed to _data in the node.
+
+Node * GetLeftSubTree(Node * _p_node);
+// 왼쪽 서브 트리의 주소 값을 반환한다.
+// Returns the address of the left subtree.
+
+Node * GetRightSubTree(Node * _p_node);
+// 오른쪽 서브 트리의 주소 값을 반환한다.
+// Returns the address of the right subtree.
+
+void MakeLeftSubTree(Node * _p_main, Node * _p_sub);
+// 왼쪽 서브 트리를 연결한다.
+// Connect the left sub tree
+
+void MakeRightSubTree(Node * _p_main, Node * _p_sub);
+// 오른쪽 서브 트리를 연결한다.
+// Connect the right sub tree
