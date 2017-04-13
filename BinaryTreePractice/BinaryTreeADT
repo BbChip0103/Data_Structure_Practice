@@ -1,32 +1,32 @@
 BinaryTree ADT
 
-// Á¦³×¸¯ ÀÚ·á±¸Á¶¸¦ ±¸ÇöÇÏ±â À§ÇÏ¿© 'template <class T>'¸¦ »ç¿ëÇÑ´Ù.
+// ì œë„¤ë¦­ ìë£Œêµ¬ì¡°ë¥¼ êµ¬í˜„í•˜ê¸° ìœ„í•˜ì—¬ 'template <class T>'ë¥¼ ì‚¬ìš©í•œë‹¤.
 // Use 'template <class T>' to implement the generic data structure.
 
 Node * MakeNode(void);
-// ÀÌÁøÆ®¸® ³ëµå¸¦ »ı¼ºÇÏ°í, ±× ÁÖ¼Ò°ªÀ» ¹İÈ¯ÇÑ´Ù.
+// ì´ì§„íŠ¸ë¦¬ ë…¸ë“œë¥¼ ìƒì„±í•˜ê³ , ê·¸ ì£¼ì†Œê°’ì„ ë°˜í™˜í•œë‹¤.
 // Creates a binary tree node and returns its address value.
 
 T GetData(Node * _p_node);
-// ³ëµå¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ¸¦ ¹İÈ¯ÇÑ´Ù.
+// ë…¸ë“œì— ì €ì¥ëœ ë°ì´í„°ë¥¼ ë°˜í™˜í•œë‹¤.
 // Return stored data in the node.
 
 void SetData(Node * _p_tree, T _data);
-// ³ëµå¿¡ µ¥ÀÌÅÍ¸¦ ÀúÀåÇÑ´Ù. _data·Î Àü´ŞµÈ °ªÀ» ÀúÀåÇÑ´Ù.
+// ë…¸ë“œì— ë°ì´í„°ë¥¼ ì €ì¥í•œë‹¤. _dataë¡œ ì „ë‹¬ëœ ê°’ì„ ì €ì¥í•œë‹¤.
 // Stores the data passed to _data in the node.
 
 Node * GetLeftSubTree(Node * _p_node);
-// ¿ŞÂÊ ¼­ºê Æ®¸®ÀÇ ÁÖ¼Ò °ªÀ» ¹İÈ¯ÇÑ´Ù.
+// ì™¼ìª½ ì„œë¸Œ íŠ¸ë¦¬ì˜ ì£¼ì†Œ ê°’ì„ ë°˜í™˜í•œë‹¤.
 // Returns the address of the left subtree.
 
 Node * GetRightSubTree(Node * _p_node);
-// ¿À¸¥ÂÊ ¼­ºê Æ®¸®ÀÇ ÁÖ¼Ò °ªÀ» ¹İÈ¯ÇÑ´Ù.
+// ì˜¤ë¥¸ìª½ ì„œë¸Œ íŠ¸ë¦¬ì˜ ì£¼ì†Œ ê°’ì„ ë°˜í™˜í•œë‹¤.
 // Returns the address of the right subtree.
 
 void MakeLeftSubTree(Node * _p_main, Node * _p_sub);
-// ¿ŞÂÊ ¼­ºê Æ®¸®¸¦ ¿¬°áÇÑ´Ù.
+// ì™¼ìª½ ì„œë¸Œ íŠ¸ë¦¬ë¥¼ ì—°ê²°í•œë‹¤.
 // Connect the left sub tree
 
 void MakeRightSubTree(Node * _p_main, Node * _p_sub);
-// ¿À¸¥ÂÊ ¼­ºê Æ®¸®¸¦ ¿¬°áÇÑ´Ù.
+// ì˜¤ë¥¸ìª½ ì„œë¸Œ íŠ¸ë¦¬ë¥¼ ì—°ê²°í•œë‹¤.
 // Connect the right sub tree
