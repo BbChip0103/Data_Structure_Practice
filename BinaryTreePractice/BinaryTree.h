@@ -91,29 +91,41 @@ public:
   // 노드에 데이터를 저장한다. _data로 전달된 값을 저장한다.
   // Stores the data passed to _data in the node.
 
-  T GetLeftSubTree();
+  T GetLeft();
   // 왼쪽 서브 트리의 값을 반환한다.
   // Returns the value of the left subtree.
 
-  void MakeLeftSubTree();
+  void MakeLeft();
   // 왼쪽 서브 트리를 연결한다.
   // Connect the left sub tree
 
-  void MakeLeftSubTree(const T _data);
+  void MakeLeft(const T _data);
   // 왼쪽 서브 트리를 연결하고 값을 대입한다.
   // Connect the left sub tree, And insert value
 
-  T GetRightSubTree();
+  T GetRight();
   // 오른쪽 서브 트리의 값을 반환한다.
   // Returns the value of the right subtree.
 
-  void MakeRightSubTree();
+  void MakeRight();
   // 오른쪽 서브 트리를 연결한다.
   // Connect the right sub tree
 
-  void MakeRightSubTree(const T _data);
+  void MakeRight(const T _data);
   // 오른쪽 서브 트리를 연결하고 값을 대입한다.
   // Connect the right sub tree, And insert value
+
+  void MoveRoot();
+  // 현재 노드를 루트 노드로 옮긴다.
+  // Change current node to root node
+
+  void MoveLeft();
+  // 현재 노드를 좌측 자식 노드로 옮긴다.
+  // Change current node to left child node
+
+  void MoveRight();
+  // 현재 노드를 우측 자식 노드로 옮긴다.
+  // Change current node to right child node
 
   void Remove();
 
@@ -138,8 +150,7 @@ BinaryTree<T>::BinaryTree(){
 }
 
 template <class T>
-BinaryTree<T>::BinaryTree(const T _data){
-  BinaryTree();
+BinaryTree<T>::BinaryTree(const T _data) : BinaryTree(){
   SetData(_data);
 }
 
@@ -170,13 +181,13 @@ void BinaryTree<T>::SetData(const T _data){
 }
 
 template <class T>
-void BinaryTree<T>::MakeLeftSubTree(){
+void BinaryTree<T>::MakeLeft(){
   Node<T> * p_temp;
 
   if(current_node == NULL){
     // error
     return;
-  }else if(current_node->GetLeft() == NULL){
+  } else if(current_node->GetLeft() == NULL) {
     p_temp = new Node<T>;
     current_node->SetLeft(p_temp);
   }
@@ -189,7 +200,7 @@ void BinaryTree<T>::MakeLeftSubTree(){
 }
 
 template <class T>
-void BinaryTree<T>::MakeLeftSubTree(const T _data){
+void BinaryTree<T>::MakeLeft(const T _data){
   Node<T> * p_temp;
 
   if(current_node == NULL){
@@ -210,7 +221,7 @@ void BinaryTree<T>::MakeLeftSubTree(const T _data){
 }
 
 template <class T>
-T BinaryTree<T>::GetLeftSubTree(){
+T BinaryTree<T>::GetLeft(){
   Node<T> * p_temp;
 
   if(current_node == NULL){
@@ -229,7 +240,7 @@ T BinaryTree<T>::GetLeftSubTree(){
 }
 
 template <class T>
-void BinaryTree<T>::MakeRightSubTree(){
+void BinaryTree<T>::MakeRight(){
   Node<T> * p_temp;
 
   if(current_node == NULL){
@@ -252,7 +263,7 @@ void BinaryTree<T>::MakeRightSubTree(){
 }
 
 template <class T>
-void BinaryTree<T>::MakeRightSubTree(const T _data){
+void BinaryTree<T>::MakeRight(const T _data){
   Node<T> * p_temp;
 
   if(current_node == NULL){
@@ -277,7 +288,7 @@ void BinaryTree<T>::MakeRightSubTree(const T _data){
 }
 
 template <class T>
-T BinaryTree<T>::GetRightSubTree(){
+T BinaryTree<T>::GetRight(){
   Node<T> * p_temp;
 
   if(current_node == NULL){
@@ -296,22 +307,35 @@ T BinaryTree<T>::GetRightSubTree(){
 }
 
 template <class T>
+void BinaryTree<T>::MoveRoot(){
+  current_node = root_node;
+}
+
+template <class T>
+void BinaryTree<T>::MoveLeft(){
+  current_node = current_node->GetLeft();
+}
+
+template <class T>
+void BinaryTree<T>::MoveRight(){
+  current_node = current_node->GetRight();
+}
+
+template <class T>
 void BinaryTree<T>::Remove(){
   Remove(current_node);
 }
 
 template <class T>
-void BinaryTree<T>::Remove(Node<T> * const _p_node){
-  Node<T> * const traverse_node = _p_node;
-
-  if(traverse_node == NULL){
+void BinaryTree<T>::Remove(Node<T> * const _p_traverse_node){
+  if(_p_traverse_node == NULL){
     return;
   }
 
-  Remove(traverse_node->GetLeft());
-  Remove(traverse_node->GetRight());
+  Remove(_p_traverse_node->GetLeft());
+  Remove(_p_traverse_node->GetRight());
 
-  delete traverse_node;
+  delete _p_traverse_node;
 }
 
 template <class T>
@@ -320,15 +344,13 @@ void BinaryTree<T>::PostorderTraverse(){
 }
 
 template <class T>
-void BinaryTree<T>::PostorderTraverse(Node<T> * const _p_node){
-  Node<T> * const traverse_node = _p_node;
-
-  if(traverse_node == NULL){
+void BinaryTree<T>::PostorderTraverse(Node<T> * const _p_traverse_node){
+  if(_p_traverse_node == NULL){
     return;
   }
 
-  std::cout << traverse_node << std::endl;
+  std::cout << _p_traverse_node->GetData() << std::endl;
 
-  PostorderTraverse(traverse_node->GetLeft());
-  PostorderTraverse(traverse_node->GetRight());
+  PostorderTraverse(_p_traverse_node->GetLeft());
+  PostorderTraverse(_p_traverse_node->GetRight());
 }

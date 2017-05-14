@@ -1,26 +1,48 @@
 #include <iostream>
 #include "BinaryTree.h"
 
-int main(void){
+void re_main(){
   BinaryTree<int> * a = new BinaryTree<int>;
   BinaryTree<int> b(12);
 
   std::cout << a->GetData() << std::endl;
   std::cout << b.GetData() << std::endl;
+/*
+  a->MakeLeft(1234);
+  b.MakeLeft();
 
-  a->MakeLeftSubTree(1234);
-  b.MakeLeftSubTree();
+  std::cout << a->GetLeft() << std::endl;
+  std::cout << b.GetLeft() << std::endl;
 
-  std::cout << a->GetLeftSubTree() << std::endl;
-  std::cout << b.GetLeftSubTree() << std::endl;
+  a->MakeLeft(4567);
+  b.MakeLeft(6666);
 
-  a->MakeLeftSubTree(4567);
-  b.MakeLeftSubTree(6666);
+  std::cout << a->GetLeft() << std::endl;
+  std::cout << b.GetLeft() << std::endl;
 
-  std::cout << a->GetLeftSubTree() << std::endl;
-  std::cout << b.GetLeftSubTree() << std::endl;
+  a->MakeLeft(4567);
+  b.MakeLeft(6666);
 
+  a->MoveLeft();
+  b.MoveLeft();
+
+  std::cout << a->GetData() << std::endl;
+  std::cout << b.GetData() << std::endl;
+
+  a->MoveRoot();
+  b.MoveRoot();
+
+  std::cout << a->GetData() << std::endl;
+  std::cout << b.GetData() << std::endl;
+*/
   delete a;
+
+}
+
+int main(void){
+
+  re_main();
+
 
   return 0;
 }
